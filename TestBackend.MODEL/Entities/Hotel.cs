@@ -2,11 +2,11 @@
 {
     public class Hotel
     {
-        public int idHotel { get; set; }
-        public string nameHotel { get; set; }
-        public string descriptionHotel { get; set;}
-        public int idLocation { get; set; }
-        public int idClass { get; set; }
-        public int idStatus { get; set; }
+        public int hotelId { get; set; }
+        public string hotelName { get; set; }
+        public string hotelDescription { get; set;}
+        public int locationId { get; set; }
+        public int classId { get; set; }
+        public int statusId { get; set; }
     }
 }

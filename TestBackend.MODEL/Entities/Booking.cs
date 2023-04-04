@@ -2,9 +2,9 @@
 {
     public class Booking
     {
-        public int idBooking { get; set; }
-        public int idHotel { get; set; }
-        public int idStatus { get; set; }
+        public int bookingId { get; set; }
+        public int hotelId { get; set; }
+        public int statusId { get; set; }
 
     }
 }

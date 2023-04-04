@@ -2,11 +2,11 @@
 {
     public class Room
     {
-        public int idRoom { get; set; }
-        public int idHotel { get; set; }
-        public string nameRoom { get; set; }
-        public string descriptionRoom { get; set;}
-        public int idType { get; set; }
-        public int idLocation { get; set; }
+        public int roomId { get; set; }
+        public int hotelId { get; set; }
+        public string roomName { get; set; }
+        public string roomDescription { get; set;}
+        public int typeId { get; set; }
+        public int locationId { get; set; }
     }
 }
