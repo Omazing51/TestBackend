@@ -4,6 +4,7 @@
     {
         public int bookingDetailId { get; set; }
         public int bookingId { get; set; }
+        public Booking Booking { get; set; }
         public int identificationType { get; set; }
         public int identificationUser { get; set; }
         public string firstName { get; set; }

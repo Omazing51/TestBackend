@@ -3,6 +3,9 @@
     public class HotelService
     {
         public int hotelId { get; set; }
+        public Hotel Hotel { get; set; }
         public int serviceId { get; set; }
+        public Service Service { get; set; }
+
     }
 }
