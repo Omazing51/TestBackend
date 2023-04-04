@@ -8,5 +8,6 @@
         public string roomDescription { get; set;}
         public int typeId { get; set; }
         public int locationId { get; set; }
+        public int statusId { get; set; }
     }
 }
