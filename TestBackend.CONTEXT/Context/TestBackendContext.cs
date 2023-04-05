@@ -14,8 +14,10 @@ namespace TestBackend.CONTEXT.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<HotelService>().HasNoKey();
+          
 
-      
+
         }
 
         public DbSet<Booking> Bookings { get; set; }
@@ -26,7 +28,7 @@ namespace TestBackend.CONTEXT.Context
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<HotelClass> HotelClasses { get; set; }
         public DbSet<HotelImage> HotelImages { get; set; }
-        //public DbSet<HotelService> HotelServices { get; set; }
+        public DbSet<HotelService> HotelServices { get; set; }
         public DbSet<HotelStatus> HotelStatuses { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Room> Rooms { get; set; }
