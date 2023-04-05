@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using TestBackend.MODEL.Entities;
 
 namespace TestBackend.CONTEXT.Context
 {
-    public class TestBackendContext : DbContext
+    public class TestBackendContext : IdentityDbContext<User>
     {
         public TestBackendContext(DbContextOptions options): base(options)
         {
