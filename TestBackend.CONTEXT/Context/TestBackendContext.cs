@@ -27,7 +27,7 @@ namespace TestBackend.CONTEXT.Context
         public DbSet<HotelClass> HotelClasses { get; set; }
         public DbSet<HotelImage> HotelImages { get; set; }
         //public DbSet<HotelService> HotelServices { get; set; }
-        //public DbSet<HotelStatus> HotelStatuses { get; set; }
+        public DbSet<HotelStatus> HotelStatuses { get; set; }
         //public DbSet<Location> Locations { get; set; }
         //public DbSet<Room> Rooms { get; set; }
         //public DbSet<RoomBooking> RoomBookings { get; set; }
