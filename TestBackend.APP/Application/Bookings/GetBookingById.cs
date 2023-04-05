@@ -11,19 +11,19 @@ namespace TestBackend.APP.Application.Bookings
             public int Id { get; set; }
         }
 
-        //public class Handler : IRequestHandler<UniqueBooking, Booking>
-        //{
-        //    private readonly TestBackendContext _context;
-        //    public Handler(TestBackendContext context)
-        //    {
-        //        _context = context;
-        //    }
+        public class Handler : IRequestHandler<UniqueBooking, Booking>
+        {
+            private readonly TestBackendContext _context;
+            public Handler(TestBackendContext context)
+            {
+                _context = context;
+            }
 
-        //    //public async Task<Booking> Handle(UniqueBooking request, CancellationToken cancellationToken)
-        //    //{
-        //    //    var booking = await _context.Bookings.FindAsync(request.Id);
-        //    //    return booking;
-        //    //}
-        //}
+            public async Task<Booking> Handle(UniqueBooking request, CancellationToken cancellationToken)
+            {
+                var booking = await _context.Bookings.FindAsync(request.Id);
+                return booking;
+            }
+        }
     }
 }
