@@ -18,7 +18,7 @@ namespace TestBackend.CONTEXT.Context
       
         }
 
-        //public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
         public DbSet<BookingDetail> BookingDetails { get; set; }
         public DbSet<BookingStatus> BookingStatuses { get; set; }
         public DbSet<City> Cities { get; set; }
