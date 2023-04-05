@@ -1,11 +1,12 @@
-﻿namespace TestBackend.MODEL.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TestBackend.MODEL.Entities
 {
     public class RoomBooking
     {
-        public int Id { get; set; }
-        public int roomId { get; set; }
-        //public Room Room { get; set; }
-        public int bookingId { get; set; }
-        //public Booking Booking { get; set; }
+        [ForeignKey("roomId")]
+        public Room Room { get; set; }
+        [ForeignKey("bookingId")]
+        public Booking Booking { get; set; }
     }
 }

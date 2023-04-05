@@ -8,5 +8,6 @@ namespace TestBackend.MODEL.Entities
         public int hotelClassId { get; set; }
         public string hotelClassName { get; set; }
         public string hotelClassDescription { get; set; }   
+        //public ICollection<Hotel> Hotels { get; set; }
     }
 }

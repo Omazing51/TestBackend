@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TestBackend.MODEL.Entities
 {
@@ -6,7 +7,7 @@ namespace TestBackend.MODEL.Entities
     {
         [Key]
         public int bookingDetailId { get; set; }
-        public int bookingId { get; set; }
+        //[ForeignKey("bookingId")]
         //public Booking Booking { get; set; }
         public int identificationType { get; set; }
         public int identificationUser { get; set; }

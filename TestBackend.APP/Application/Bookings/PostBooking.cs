@@ -14,31 +14,29 @@ namespace TestBackend.APP.Application.Bookings
             public BookingStatus BookingStatus { get; set; }
         }
 
-        public class Handler : IRequestHandler<Execute>
-        {
-            private readonly TestBackendContext _context;
-            public Handler(TestBackendContext context)
-            {
-                _context = context;
-            }
-            public async Task<Unit> Handle(Execute request, CancellationToken cancellationToken)
-            {
-                var booking = new Booking
-                {
-                    hotelId = request.hotelId,
-                    //Hotel = request.Hotel,
-                    statusId = request.statusId,
-                    //BookingStatus = request.BookingStatus,
-                };
-                _context.Bookings.Add(booking);
-                var value = await _context.SaveChangesAsync();
-                if (value > 0)
-                {
-                    return Unit.Value;
-                }
+        //public class Handler : IRequestHandler<Execute>
+        //{
+        //    private readonly TestBackendContext _context;
+        //    public Handler(TestBackendContext context)
+        //    {
+        //        _context = context;
+        //    }
+        //    //public async Task<Unit> Handle(Execute request, CancellationToken cancellationToken)
+        //    //{
+        //    //    var booking = new Booking
+        //    //    {
+        //    //        Hotel = request.Hotel,
+        //    //        BookingStatus = request.BookingStatus,
+        //    //    };
+        //    //    _context.Bookings.Add(booking);
+        //    //    var value = await _context.SaveChangesAsync();
+        //    //    if (value > 0)
+        //    //    {
+        //    //        return Unit.Value;
+        //    //    }
 
-                throw new Exception("No se pudo realizar la reserva");
-            }
-        }
+        //    //    throw new Exception("No se pudo realizar la reserva");
+        //    //}
+        //}
     }
 }

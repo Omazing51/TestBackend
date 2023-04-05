@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TestBackend.MODEL.Entities
 {
@@ -6,14 +7,15 @@ namespace TestBackend.MODEL.Entities
     {
         [Key]
         public int roomId { get; set; }
-        public int hotelId { get; set; }
+        //[ForeignKey("hotelId")]
         //public Hotel Hotel { get; set; }
         public string roomName { get; set; }
         public string roomDescription { get; set;}
-        public int typeId { get; set; }
+        //[ForeignKey("roomTypeId")]
         //public RoomType RoomType { get; set; }
-        public int location { get; set; }
-        public int statusId { get; set; }
+        public string location { get; set; }
+        //[ForeignKey("roomStatusId")]
         //public RoomStatus RoomStatus { get; set; }
+        //public ICollection<RoomImage> RoomImages { get; set; }
     }
 }

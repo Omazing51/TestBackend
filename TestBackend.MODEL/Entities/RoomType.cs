@@ -12,5 +12,6 @@ namespace TestBackend.MODEL.Entities
         public int? totalJacuzzi { get; set; }
         public int? totalTv { get; set; }
         public decimal totalValue { get; set; }
+        //public ICollection<Room> Rooms { get; set; }
     }
 }

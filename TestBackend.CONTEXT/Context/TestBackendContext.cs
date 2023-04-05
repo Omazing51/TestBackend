@@ -14,27 +14,27 @@ namespace TestBackend.CONTEXT.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-           
 
+      
         }
 
-        public DbSet<Booking> Bookings { get; set; } 
-        public DbSet<BookingDetail> BookingDetails { get; set; }
-        public DbSet<BookingStatus> BookingStatuses { get; set; }
-        public DbSet<City> Cities { get; set; }
-        public DbSet<Country> Countries { get; set; }
-        public DbSet<Hotel> Hotels { get; set; }
-        public DbSet<HotelClass> HotelClasses { get; set; }
-        public DbSet<HotelImage> HotelImages { get; set; }
-        public DbSet<HotelService> HotelServices { get; set; }
-        public DbSet<HotelStatus> HotelStatuses { get; set; }
-        public DbSet<Location> Locations { get; set; }
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<RoomBooking> RoomBookings { get; set; }
-        public DbSet<RoomImage> RoomImages { get; set; }
-        public DbSet<RoomStatus> RoomStatuses { get; set; }
-        public DbSet<RoomType> RoomTypes { get; set; }
-        public DbSet<Service> Services { get; set; }
+        //public DbSet<Booking> Bookings { get; set; } 
+        //public DbSet<BookingDetail> BookingDetails { get; set; }
+        //public DbSet<BookingStatus> BookingStatuses { get; set; }
+        //public DbSet<City> Cities { get; set; }
+        //public DbSet<Country> Countries { get; set; }
+        //public DbSet<Hotel> Hotels { get; set; }
+        //public DbSet<HotelClass> HotelClasses { get; set; }
+        //public DbSet<HotelImage> HotelImages { get; set; }
+        //public DbSet<HotelService> HotelServices { get; set; }
+        //public DbSet<HotelStatus> HotelStatuses { get; set; }
+        //public DbSet<Location> Locations { get; set; }
+        //public DbSet<Room> Rooms { get; set; }
+        //public DbSet<RoomBooking> RoomBookings { get; set; }
+        //public DbSet<RoomImage> RoomImages { get; set; }
+        //public DbSet<RoomStatus> RoomStatuses { get; set; }
+        //public DbSet<RoomType> RoomTypes { get; set; }
+        //public DbSet<Service> Services { get; set; }
 
 
     }

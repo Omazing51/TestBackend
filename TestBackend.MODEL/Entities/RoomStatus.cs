@@ -7,5 +7,6 @@ namespace TestBackend.MODEL.Entities
         [Key]
         public int statusId {  get; set; }
         public string statusDescription { get; set; }
+        //public ICollection<Room> Rooms { get; set; }
     }
 }
