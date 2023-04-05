@@ -8,7 +8,7 @@ namespace TestBackend.APP.Application.Services
     {
         public class UniqueService : IRequest<Service>
         {
-            public int Id { get; set; }
+            public int serviceId { get; set; }
         }
 
         public class Handler : IRequestHandler<UniqueService, Service>
@@ -21,7 +21,7 @@ namespace TestBackend.APP.Application.Services
 
             public async Task<Service> Handle(UniqueService request, CancellationToken cancellationToken)
             {
-                var service = await _context.Services.FindAsync(request.Id);
+                var service = await _context.Services.FindAsync(request.serviceId);
                 return service;
             }
         }
