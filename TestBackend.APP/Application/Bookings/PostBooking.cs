@@ -26,9 +26,9 @@ namespace TestBackend.APP.Application.Bookings
                 var booking = new Booking
                 {
                     hotelId = request.hotelId,
-                    Hotel = request.Hotel,
+                    //Hotel = request.Hotel,
                     statusId = request.statusId,
-                    BookingStatus = request.BookingStatus,
+                    //BookingStatus = request.BookingStatus,
                 };
                 _context.Bookings.Add(booking);
                 var value = await _context.SaveChangesAsync();

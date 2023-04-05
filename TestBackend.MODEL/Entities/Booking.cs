@@ -7,9 +7,9 @@ namespace TestBackend.MODEL.Entities
         [Key]
         public int bookingId { get; set; }
         public int hotelId { get; set; }
-        public Hotel Hotel { get; set; }
+        //public Hotel Hotel { get; set; }
         public int statusId { get; set; }
-        public BookingStatus BookingStatus { get; set; }    
+        //public BookingStatus BookingStatus { get; set; }    
 
     }
 }
