@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestBackend.CONTEXT.Context;
 
@@ -11,9 +12,11 @@ using TestBackend.CONTEXT.Context;
 namespace TestBackend.CONTEXT.Migrations
 {
     [DbContext(typeof(TestBackendContext))]
-    partial class TestBackendContextModelSnapshot : ModelSnapshot
+    [Migration("20230405153612_countries3")]
+    partial class countries3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,23 +156,6 @@ namespace TestBackend.CONTEXT.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("TestBackend.MODEL.Entities.Country", b =>
-                {
-                    b.Property<int>("countryId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("countryId"));
-
-                    b.Property<string>("countryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("countryId");
-
-                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("TestBackend.MODEL.Entities.Service", b =>

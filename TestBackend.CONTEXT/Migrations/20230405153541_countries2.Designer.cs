@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestBackend.CONTEXT.Context;
 
@@ -11,9 +12,11 @@ using TestBackend.CONTEXT.Context;
 namespace TestBackend.CONTEXT.Migrations
 {
     [DbContext(typeof(TestBackendContext))]
-    partial class TestBackendContextModelSnapshot : ModelSnapshot
+    [Migration("20230405153541_countries2")]
+    partial class countries2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,6 +156,28 @@ namespace TestBackend.CONTEXT.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("TestBackend.MODEL.Entities.City", b =>
+                {
+                    b.Property<int>("cityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("cityId"));
+
+                    b.Property<string>("cityName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("countryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("cityId");
+
+                    b.HasIndex("countryId");
+
+                    b.ToTable("Cities");
                 });
 
             modelBuilder.Entity("TestBackend.MODEL.Entities.Country", b =>
@@ -311,6 +336,18 @@ namespace TestBackend.CONTEXT.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("TestBackend.MODEL.Entities.City", b =>
+                {
+                    b.HasOne("TestBackend.MODEL.Entities.Country", null)
+                        .WithMany("Cities")
+                        .HasForeignKey("countryId");
+                });
+
+            modelBuilder.Entity("TestBackend.MODEL.Entities.Country", b =>
+                {
+                    b.Navigation("Cities");
                 });
 #pragma warning restore 612, 618
         }
