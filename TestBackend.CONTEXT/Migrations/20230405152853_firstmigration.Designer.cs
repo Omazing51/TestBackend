@@ -12,7 +12,7 @@ using TestBackend.CONTEXT.Context;
 namespace TestBackend.CONTEXT.Migrations
 {
     [DbContext(typeof(TestBackendContext))]
-    [Migration("20230405152021_firstmigration")]
+    [Migration("20230405152853_firstmigration")]
     partial class firstmigration
     {
         /// <inheritdoc />
