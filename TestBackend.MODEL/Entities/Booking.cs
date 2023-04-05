@@ -9,8 +9,8 @@ namespace TestBackend.MODEL.Entities
         public int bookingId { get; set; }
         [ForeignKey("hotelId")]
         public Hotel Hotel { get; set; }
-        //[ForeignKey("bookingStatuslId")]
-        //public BookingStatus BookingStatus { get; set; }
+        [ForeignKey("bookingStatuslId")]
+        public BookingStatus BookingStatus { get; set; }
         //public ICollection<BookingDetail> BookingDetails { get; set;}
 
 
