@@ -7,8 +7,8 @@ namespace TestBackend.MODEL.Entities
     {
         [Key]
         public int bookingDetailId { get; set; }
-        //[ForeignKey("bookingId")]
-        //public Booking Booking { get; set; }
+        [ForeignKey("bookingId")]
+        public Booking Booking { get; set; }
         public int identificationType { get; set; }
         public int identificationUser { get; set; }
         public string firstName { get; set; }
