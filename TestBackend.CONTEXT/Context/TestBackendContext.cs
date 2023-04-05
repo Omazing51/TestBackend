@@ -15,7 +15,8 @@ namespace TestBackend.CONTEXT.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<HotelService>().HasNoKey();
-          
+            modelBuilder.Entity<RoomBooking>().HasNoKey();
+
 
 
         }
@@ -32,7 +33,7 @@ namespace TestBackend.CONTEXT.Context
         public DbSet<HotelStatus> HotelStatuses { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Room> Rooms { get; set; }
-        //public DbSet<RoomBooking> RoomBookings { get; set; }
+        public DbSet<RoomBooking> RoomBookings { get; set; }
         public DbSet<RoomImage> RoomImages { get; set; }
         public DbSet<RoomStatus> RoomStatuses { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }

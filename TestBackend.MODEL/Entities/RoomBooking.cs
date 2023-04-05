@@ -8,5 +8,6 @@ namespace TestBackend.MODEL.Entities
         public Room Room { get; set; }
         [ForeignKey("bookingId")]
         public Booking Booking { get; set; }
+
     }
 }

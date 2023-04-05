@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestBackend.CONTEXT.Context;
 
@@ -11,9 +12,11 @@ using TestBackend.CONTEXT.Context;
 namespace TestBackend.CONTEXT.Migrations
 {
     [DbContext(typeof(TestBackendContext))]
-    partial class TestBackendContextModelSnapshot : ModelSnapshot
+    [Migration("20230405193351_fk_booking_roomid2")]
+    partial class fk_booking_roomid2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -486,21 +489,6 @@ namespace TestBackend.CONTEXT.Migrations
                     b.ToTable("Rooms");
                 });
 
-            modelBuilder.Entity("TestBackend.MODEL.Entities.RoomBooking", b =>
-                {
-                    b.Property<int>("bookingId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("roomId")
-                        .HasColumnType("int");
-
-                    b.HasIndex("bookingId");
-
-                    b.HasIndex("roomId");
-
-                    b.ToTable("RoomBookings");
-                });
-
             modelBuilder.Entity("TestBackend.MODEL.Entities.RoomImage", b =>
                 {
                     b.Property<int>("imageId")
@@ -863,25 +851,6 @@ namespace TestBackend.CONTEXT.Migrations
                     b.Navigation("RoomStatus");
 
                     b.Navigation("RoomType");
-                });
-
-            modelBuilder.Entity("TestBackend.MODEL.Entities.RoomBooking", b =>
-                {
-                    b.HasOne("TestBackend.MODEL.Entities.Booking", "Booking")
-                        .WithMany()
-                        .HasForeignKey("bookingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("TestBackend.MODEL.Entities.Room", "Room")
-                        .WithMany()
-                        .HasForeignKey("roomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Booking");
-
-                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("TestBackend.MODEL.Entities.RoomImage", b =>
