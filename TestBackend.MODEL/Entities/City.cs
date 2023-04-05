@@ -7,8 +7,8 @@ namespace TestBackend.MODEL.Entities
     {
         [Key]
         public int cityId { get; set; }
-        //[ForeignKey("countryId")]
-        //public Country Country { get; set; }
+        [ForeignKey("countryId")]
+        public Country Country { get; set; }
         public string cityName { get; set; }
 
         //public ICollection<Location> Locations { get; set;}
