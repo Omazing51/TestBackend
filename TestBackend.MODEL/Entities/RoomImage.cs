@@ -7,8 +7,8 @@ namespace TestBackend.MODEL.Entities
     {
         [Key]
         public int imageId { get; set; }
-        //[ForeignKey("roomId")]
-        //public Room Room { get; set; }
+        [ForeignKey("roomId")]
+        public Room Room { get; set; }
         public string imageTittle { get; set; }
         public string imageDescription { get; set; }
         public string imageUrl { get; set; }
