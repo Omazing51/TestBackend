@@ -1,7 +1,10 @@
-﻿namespace TestBackend.MODEL.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TestBackend.MODEL.Entities
 {
     public class RoomImage
     {
+        [Key]
         public int imageId { get; set; }
         public int roomId { get; set; }
         public Room Room { get; set; }

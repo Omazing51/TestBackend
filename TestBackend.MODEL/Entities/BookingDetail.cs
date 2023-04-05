@@ -1,7 +1,10 @@
-﻿namespace TestBackend.MODEL.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TestBackend.MODEL.Entities
 {
     public class BookingDetail
     {
+        [Key]
         public int bookingDetailId { get; set; }
         public int bookingId { get; set; }
         public Booking Booking { get; set; }

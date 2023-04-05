@@ -13,6 +13,7 @@ namespace TestBackend.CONTEXT.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<HotelService>().HasKey(x => new { x.hotelId, x.serviceId });
             modelBuilder.Entity<RoomBooking>().HasKey(x => new { x.roomId, x.bookingId });
         }

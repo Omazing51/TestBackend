@@ -1,7 +1,10 @@
-﻿namespace TestBackend.MODEL.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TestBackend.MODEL.Entities
 {
     public class RoomType
     {
+        [Key]
         public int typeId { get; set; }
         public string DescriptionType { get; set; }
         public int totalPerson { get; set; }
