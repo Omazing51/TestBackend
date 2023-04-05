@@ -13,8 +13,8 @@ namespace TestBackend.MODEL.Entities
         public Location Location { get; set; }
         [ForeignKey("hotelClassId")]
         public HotelClass HotelClass { get; set; }
-        //[ForeignKey("hotelStatusId")]
-        //public HotelStatus HotelStatus { get; set; }
+        [ForeignKey("hotelStatusId")]
+        public HotelStatus HotelStatus { get; set; }
         //public ICollection<Room> Rooms { get; set; }
         //public ICollection<Booking> Bookings { get; set; }
         //public ICollection<HotelImage> HotelImages { get; set; }
