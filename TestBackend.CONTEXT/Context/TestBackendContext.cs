@@ -32,7 +32,7 @@ namespace TestBackend.CONTEXT.Context
         public DbSet<Room> Rooms { get; set; }
         //public DbSet<RoomBooking> RoomBookings { get; set; }
         public DbSet<RoomImage> RoomImages { get; set; }
-        //public DbSet<RoomStatus> RoomStatuses { get; set; }
+        public DbSet<RoomStatus> RoomStatuses { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<Service> Services { get; set; }
 
