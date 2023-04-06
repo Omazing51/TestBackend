@@ -20,7 +20,7 @@ namespace TestBackend.APP.Application.Locations
 
             public async Task<List<Location>> Handle(LocationsList request, CancellationToken cancellationToken)
             {
-                var location = await _context.Locations.ToListAsync();
+                var location = await _context.Locations.Include(x => x.City).ToListAsync();
                 return location;
             }
         }
