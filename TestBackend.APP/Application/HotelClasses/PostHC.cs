@@ -6,20 +6,20 @@ namespace TestBackend.APP.Application.HotelClasses
 {
     public class PostHC
     {
-        public class Execute : IRequest
+        public class ExecuteHotelClass : IRequest
         {
             public string hotelClassName { get; set; }
             public string hotelClassDescription { get; set; }
         }
 
-        public class Handler : IRequestHandler<Execute>
+        public class Handler : IRequestHandler<ExecuteHotelClass>
         {
             private readonly TestBackendContext _context;
             public Handler(TestBackendContext context)
             {
                 _context = context;
             }
-            public async Task<Unit> Handle(Execute request, CancellationToken cancellationToken)
+            public async Task<Unit> Handle(ExecuteHotelClass request, CancellationToken cancellationToken)
             {
                 var hc = new HotelClass
                 {

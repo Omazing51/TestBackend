@@ -6,19 +6,19 @@ namespace TestBackend.APP.Application.HotelStatusses
 {
     public class PostHotelStatus
     {
-        public class Execute : IRequest
+        public class ExecuteStatus : IRequest
         {
             public string statusDescription { get; set; }
         }
 
-        public class Handler : IRequestHandler<Execute>
+        public class Handler : IRequestHandler<ExecuteStatus>
         {
             private readonly TestBackendContext _context;
             public Handler(TestBackendContext context)
             {
                 _context = context;
             }
-            public async Task<Unit> Handle(Execute request, CancellationToken cancellationToken)
+            public async Task<Unit> Handle(ExecuteStatus request, CancellationToken cancellationToken)
             {
                 var hotelstatus = new HotelStatus
                 {

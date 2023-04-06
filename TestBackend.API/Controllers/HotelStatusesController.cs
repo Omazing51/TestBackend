@@ -28,11 +28,11 @@ namespace TestBackend.API.Controllers
             return await _mediator.Send(new GetHotelStatusById.UniqueHotelStatus { statusId = id });
         }
 
-        //[HttpPost]
-        //public async Task<ActionResult<Unit>> Create(PostHotelStatus.Execute data)
-        //{
-        //    return await _mediator.Send(data);
-        //}
+        [HttpPost]
+        public async Task<ActionResult<Unit>> Create(PostHotelStatus.ExecuteStatus data)
+        {
+            return await _mediator.Send(data);
+        }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<Unit>> Edit(int id, PutHotelStatus.EditHotelStatus data)

@@ -1,8 +1,9 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TestBackend.APP.Application.HotelClasses;
 using TestBackend.MODEL.Entities;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TestBackend.API.Controllers
 {
@@ -29,7 +30,7 @@ namespace TestBackend.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Unit>> Create(PostHC.Execute data)
+        public async Task<ActionResult<Unit>> Create(PostHC.ExecuteHotelClass data)
         {
             return await _mediator.Send(data);
         }

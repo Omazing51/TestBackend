@@ -8,11 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddMediatR(typeof(GetService.Handler).Assembly);
+//builder.Services.AddMediatR(typeof(GetService.Handler).Assembly);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(x => {
+    x.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+});
 builder.Services.AddDbContext<TestBackendContext>(op =>
 {
     op.UseSqlServer(builder.Configuration.GetConnectionString("DC"));
