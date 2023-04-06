@@ -10,7 +10,6 @@ namespace TestBackend.APP.Application.Locations
         public class ExecuteLocation : IRequest
         {
             public int cityId { get; set; }
-            public City? City { get; set; }
             public string? postalCode { get; set; }
             public string locationDescription { get; set; }
         }
@@ -26,7 +25,7 @@ namespace TestBackend.APP.Application.Locations
             {
                 var location = new Location
                 {
-                    cityId = request.City.cityId,
+                    cityId = request.cityId,
                     postalCode = request.postalCode,
                     locationDescription = request.locationDescription,
                 };

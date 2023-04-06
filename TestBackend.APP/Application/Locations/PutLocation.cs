@@ -10,7 +10,6 @@ namespace TestBackend.APP.Application.Locations
         {
             public int locationId { get; set; }
             public int cityId { get; set; }
-            public City? City { get; set; }
             public string? postalCode { get; set; }
             public string locationDescription { get; set; }
         }
@@ -31,7 +30,7 @@ namespace TestBackend.APP.Application.Locations
                     throw new Exception("No se pudo encontrar la localizacion");
                 }
 
-                location.cityId = request.City.cityId;
+                location.cityId = request.cityId;
                 location.postalCode = request.postalCode ?? request.postalCode;
                 location.locationDescription = request.locationDescription ?? location.locationDescription;
 

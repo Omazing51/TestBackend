@@ -4,9 +4,9 @@ namespace TestBackend.MODEL.Entities
 {
     public class HotelService
     {
-        [ForeignKey("hotelId")]
+        public int hotelId { get; set; }
         public Hotel Hotel { get; set; }
-        [ForeignKey("serviceId")]
+        public int serviceId { get; set; }
         public Service Service { get; set; }
 
     }

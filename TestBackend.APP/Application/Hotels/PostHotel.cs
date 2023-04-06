@@ -11,11 +11,8 @@ namespace TestBackend.APP.Application.Hotels
             public string hotelName { get; set; }
             public string hotelDescription { get; set; }
             public int locationId { get; set; }
-            public Location Location { get; set; }
             public int hotelClassId { get; set; }
-            public HotelClass HotelClass { get; set; }
             public int hotelStatusId { get; set; }
-            public HotelStatus HotelStatus { get; set; }
         }
 
         public class Handler : IRequestHandler<ExecuteHotel>
@@ -31,9 +28,9 @@ namespace TestBackend.APP.Application.Hotels
                 {
                     hotelName = request.hotelName,
                     hotelDescription = request.hotelDescription,
-                    locationId = request.Location.locationId,
-                    hotelClassId = request.HotelClass.hotelClassId,
-                    hotelStatusId = request.HotelStatus.statusId,
+                    locationId = request.locationId,
+                    hotelClassId = request.hotelClassId,
+                    hotelStatusId = request.hotelStatusId,
                 };
                 _context.Hotels.Add(hotel);
                 var value = await _context.SaveChangesAsync();
