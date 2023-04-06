@@ -7,11 +7,11 @@ namespace TestBackend.MODEL.Entities
     {
         [Key]
         public int imageId { get; set; }
-        [ForeignKey("hotelId")]
+        public int hotelId { get; set; }
         public Hotel Hotel { get; set; }
         public string imageTittle { get; set; }
         public string imageDescription { get; set; }
-        public string imageUrl { get; set; }
+        public byte[] imageUrl { get; set; }
 
 
     }

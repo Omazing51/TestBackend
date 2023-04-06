@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestBackend.CONTEXT.Context;
 
@@ -11,9 +12,11 @@ using TestBackend.CONTEXT.Context;
 namespace TestBackend.CONTEXT.Migrations
 {
     [DbContext(typeof(TestBackendContext))]
-    partial class TestBackendContextModelSnapshot : ModelSnapshot
+    [Migration("20230406163222_hoteli2")]
+    partial class hoteli2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -352,36 +355,6 @@ namespace TestBackend.CONTEXT.Migrations
                     b.HasKey("hotelClassId");
 
                     b.ToTable("HotelClasses");
-                });
-
-            modelBuilder.Entity("TestBackend.MODEL.Entities.HotelImage", b =>
-                {
-                    b.Property<int>("imageId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("imageId"));
-
-                    b.Property<int>("hotelId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("imageDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("imageTittle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("imageUrl")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.HasKey("imageId");
-
-                    b.HasIndex("hotelId");
-
-                    b.ToTable("HotelImages");
                 });
 
             modelBuilder.Entity("TestBackend.MODEL.Entities.HotelService", b =>
@@ -782,17 +755,6 @@ namespace TestBackend.CONTEXT.Migrations
                     b.Navigation("HotelStatus");
 
                     b.Navigation("Location");
-                });
-
-            modelBuilder.Entity("TestBackend.MODEL.Entities.HotelImage", b =>
-                {
-                    b.HasOne("TestBackend.MODEL.Entities.Hotel", "Hotel")
-                        .WithMany()
-                        .HasForeignKey("hotelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Hotel");
                 });
 
             modelBuilder.Entity("TestBackend.MODEL.Entities.HotelService", b =>
