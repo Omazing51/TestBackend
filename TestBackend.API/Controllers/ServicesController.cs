@@ -37,6 +37,7 @@ namespace TestBackend.API.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<Unit>> Edit(int id, PutService.EditService data)
         {
+            data.serviceId = id;
             return await _mediator.Send(data);
         }
 

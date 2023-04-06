@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using TestBackend.CONTEXT.Context;
 using TestBackend.MODEL.Entities;
 
@@ -15,7 +16,8 @@ namespace TestBackend.APP.Application.Services
             {
                 _context = context;
             }
-            public async Task<List<Booking>> Handle(ServicesList request, CancellationToken cancellationToken)
+
+            public async Task<List<Service>> Handle(ServicesList request, CancellationToken cancellationToken)
             {
                 var services = await _context.Services.ToListAsync();
                 return services;
