@@ -8,7 +8,7 @@ namespace TestBackend.APP.Application.HotelStatusses
     {
         public class UniqueHotelStatus : IRequest<HotelStatus>
         {
-            public int HotelStatusId { get; set; }
+            public int statusId { get; set; }
         }
 
         public class Handler : IRequestHandler<UniqueHotelStatus, HotelStatus>
@@ -21,7 +21,7 @@ namespace TestBackend.APP.Application.HotelStatusses
 
             public async Task<HotelStatus> Handle(UniqueHotelStatus request, CancellationToken cancellationToken)
             {
-                var hotelstatus = await _context.HotelStatuses.FindAsync(request.HotelStatusId);
+                var hotelstatus = await _context.HotelStatuses.FindAsync(request.statusId);
                 return hotelstatus;
             }
         }

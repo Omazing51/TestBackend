@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using TestBackend.APP.Application.HotelStatusses;
 using TestBackend.APP.Application.Services;
 using TestBackend.CONTEXT.Context;
 

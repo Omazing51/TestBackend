@@ -21,13 +21,13 @@ namespace TestBackend.APP.Application.HotelStatusses
             }
             public async Task<Unit> Handle(DeleteHotelStatus request, CancellationToken cancellationToken)
             {
-                var hotelstatus = await _context.Services.FindAsync(request.statusId);
+                var hotelstatus = await _context.HotelStatuses.FindAsync(request.statusId);
                 if (hotelstatus == null)
                 {
 
-                    throw new Exception("No se encontro el servicio");
+                    throw new Exception("No se encontro el estado");
                 }
-                _context.Services.Remove(hotelstatus);
+                _context.HotelStatuses.Remove(hotelstatus);
 
                 var resultt = await _context.SaveChangesAsync();
 
@@ -36,7 +36,7 @@ namespace TestBackend.APP.Application.HotelStatusses
                     return Unit.Value;
                 }
 
-                throw new Exception("No se pudo eliminar el servicio");
+                throw new Exception("No se pudo eliminar el estado");
 
             }
         }
