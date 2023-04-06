@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestBackend.CONTEXT.Context;
 
@@ -11,9 +12,11 @@ using TestBackend.CONTEXT.Context;
 namespace TestBackend.CONTEXT.Migrations
 {
     [DbContext(typeof(TestBackendContext))]
-    partial class TestBackendContextModelSnapshot : ModelSnapshot
+    [Migration("20230406143705_cityid")]
+    partial class cityid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -425,6 +428,9 @@ namespace TestBackend.CONTEXT.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("locationId"));
 
                     b.Property<int>("cityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("cityId2")
                         .HasColumnType("int");
 
                     b.Property<string>("locationDescription")

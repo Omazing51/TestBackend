@@ -15,7 +15,7 @@ namespace TestBackend.CONTEXT.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<HotelService>().HasNoKey();
-            modelBuilder.Entity<RoomBooking>().HasNoKey();
+            modelBuilder.Entity<RoomBooking>().HasKey(c1 => new { c1.roomId, c1.bookingId });
 
 
 
