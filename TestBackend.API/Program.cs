@@ -1,6 +1,8 @@
 using MediatR;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using TestBackend.APP.Application.HotelStatusses;
 using TestBackend.APP.Application.Services;
 using TestBackend.CONTEXT.Context;
@@ -25,7 +27,17 @@ var buil =  builder.Services.AddIdentityCore<User>();
 var identityBuilder = new IdentityBuilder(buil.UserType, buil.Services);
 identityBuilder.AddEntityFrameworkStores<TestBackendContext>();
 identityBuilder.AddSignInManager<SignInManager<User>>();
-
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Default Password settings.
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 0;
+});
+builder.Services.TryAddSingleton<ISystemClock, SystemClock>();
 
 var app = builder.Build();
 
