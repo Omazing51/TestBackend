@@ -1,8 +1,10 @@
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TestBackend.APP.Application.HotelStatusses;
 using TestBackend.APP.Application.Services;
 using TestBackend.CONTEXT.Context;
+using TestBackend.MODEL.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,11 @@ builder.Services.AddDbContext<TestBackendContext>(op =>
 {
     op.UseSqlServer(builder.Configuration.GetConnectionString("DC"));
 });
+var buil =  builder.Services.AddIdentityCore<User>();
+var identityBuilder = new IdentityBuilder(buil.UserType, buil.Services);
+identityBuilder.AddEntityFrameworkStores<TestBackendContext>();
+identityBuilder.AddSignInManager<SignInManager<User>>();
+
 
 var app = builder.Build();
 
