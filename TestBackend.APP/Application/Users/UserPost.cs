@@ -9,7 +9,7 @@ namespace TestBackend.APP.Application.Users
     {
         public class ExecuteU : IRequest
         {
-            public string UserName { get; set; }
+            public string Email { get; set; }
             public string userPassword { get; set; }
         }
 
@@ -24,7 +24,7 @@ namespace TestBackend.APP.Application.Users
             {
                 var user = new User
                 {
-                    UserName = request.UserName,
+                    Email = request.Email,
                     userPassword = request.userPassword,
                 };
                 _context.Users.Add(user);

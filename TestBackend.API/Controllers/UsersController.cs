@@ -35,5 +35,11 @@ namespace TestBackend.API.Controllers
         {
             return await _mediator.Send(data);
         }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<User>> Login(Login.ExecuteUserr parameters)
+        {
+            return await _mediator.Send(parameters);
+        }
     }
 }

@@ -11,6 +11,8 @@ namespace TestBackend.APP.Application.Users
             public string UserName { get; set; }    
             public string userPassword { get; set; }
         }
+
+       
         public class Handler : IRequestHandler<ExecuteUserr, User>
         {
             private readonly UserManager<User> _userManager;    
@@ -23,6 +25,7 @@ namespace TestBackend.APP.Application.Users
             public async Task<User> Handle(ExecuteUserr request, CancellationToken cancellationToken)
             {
                 var user = await _userManager.FindByNameAsync(request.UserName);
+             
                 if (user == null)
                 {
                     throw new Exception("No se encuentra el usuario");
@@ -34,9 +37,9 @@ namespace TestBackend.APP.Application.Users
                     return user;
                 }
 
-                throw new Exception("El inicio de sesiòn no fue exitoso");
+                throw new Exception("El inicio de sesion no fue exitoso");
             }
         }
-´     
+    
     }
 }
