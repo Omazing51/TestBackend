@@ -37,7 +37,7 @@ namespace TestBackend.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<User>> Login(Login.ExecuteUserr parameters)
+        public async Task<ActionResult<UserData>> Login(Login.ExecuteUserr parameters)
         {
             return await _mediator.Send(parameters);
         }

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TestBackend.APP\TestBackend.APP.csproj" />
+    <ProjectReference Include="..\TestBackend.SECURITY\TestBackend.SECURITY.csproj" />
   </ItemGroup>
 
 </Project>

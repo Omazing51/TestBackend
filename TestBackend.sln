@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBackend.MODEL", "TestBackend.MODEL\TestBackend.MODEL.csproj", "{4B74A9EF-1BEB-41F9-9F8D-4360FCC82AA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBackend.MODEL", "TestBackend.MODEL\TestBackend.MODEL.csproj", "{4B74A9EF-1BEB-41F9-9F8D-4360FCC82AA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBackend.CONTEXT", "TestBackend.CONTEXT\TestBackend.CONTEXT.csproj", "{CD6A7DBC-2FD3-44EF-BC39-31A29C043650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBackend.CONTEXT", "TestBackend.CONTEXT\TestBackend.CONTEXT.csproj", "{CD6A7DBC-2FD3-44EF-BC39-31A29C043650}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBackend.APP", "TestBackend.APP\TestBackend.APP.csproj", "{FEB4C58A-2F21-413C-92F4-266EF01F097A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBackend.APP", "TestBackend.APP\TestBackend.APP.csproj", "{FEB4C58A-2F21-413C-92F4-266EF01F097A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBackend.API", "TestBackend.API\TestBackend.API.csproj", "{1D9A9F27-DAD0-498F-AA5C-19B75B2C2CB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBackend.API", "TestBackend.API\TestBackend.API.csproj", "{1D9A9F27-DAD0-498F-AA5C-19B75B2C2CB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBackend.SECURITY", "TestBackend.SECURITY\TestBackend.SECURITY.csproj", "{0D584727-9CCF-405E-951A-8889DF5030F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1D9A9F27-DAD0-498F-AA5C-19B75B2C2CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D9A9F27-DAD0-498F-AA5C-19B75B2C2CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D9A9F27-DAD0-498F-AA5C-19B75B2C2CB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D584727-9CCF-405E-951A-8889DF5030F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D584727-9CCF-405E-951A-8889DF5030F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D584727-9CCF-405E-951A-8889DF5030F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D584727-9CCF-405E-951A-8889DF5030F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

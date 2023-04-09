@@ -9,7 +9,7 @@ namespace TestBackend.APP.Application.Users
 {
     public class Login
     {
-        public class ExecuteUserr : IRequest<User>
+        public class ExecuteUserr : IRequest<UserData>
         {
             [Required(ErrorMessage = "Debe ingresar su email")]
             public string email { get; set; }
@@ -19,7 +19,7 @@ namespace TestBackend.APP.Application.Users
         }
 
 
-        public class Handler : IRequestHandler<ExecuteUserr, User>
+        public class Handler : IRequestHandler<ExecuteUserr, UserData>
         {
             private readonly UserManager<User> _userManager;
             private readonly SignInManager<User> _signInManager;
@@ -30,7 +30,7 @@ namespace TestBackend.APP.Application.Users
                 _signInManager = signInManager;
                 _context = context;
             }
-            public async Task<User> Handle(ExecuteUserr request, CancellationToken cancellationToken)
+            public async Task<UserData> Handle(ExecuteUserr request, CancellationToken cancellationToken)
             {
                 var user = await _context.Users.Where(x => x.Email == request.email).FirstOrDefaultAsync();
 
@@ -42,10 +42,10 @@ namespace TestBackend.APP.Application.Users
                 var result = await _context.Users.Where(x => x.Email == request.email && x.userPassword == request.userPassword).FirstOrDefaultAsync();
                 if (result != null)
                 {
-                    return new User
+                    return new UserData
                     {
                         Email = user.Email,
-
+                        Token = "Este es el token"
                     };
                 }
 
