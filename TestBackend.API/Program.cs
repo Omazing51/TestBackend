@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using TestBackend.APP.Application.Agreements;
 using TestBackend.APP.Application.HotelStatusses;
 using TestBackend.APP.Application.Services;
 using TestBackend.CONTEXT.Context;
 using TestBackend.MODEL.Entities;
+using TestBackend.SECURITY.TokenSecurity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +39,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredLength = 6;
     options.Password.RequiredUniqueChars = 0;
 });
+builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 builder.Services.TryAddSingleton<ISystemClock, SystemClock>();
 
 var app = builder.Build();
