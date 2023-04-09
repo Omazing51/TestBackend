@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using TestBackend.APP.Application.Agreements;
 using TestBackend.CONTEXT.Context;
 using TestBackend.MODEL.Entities;
 
@@ -24,11 +25,13 @@ namespace TestBackend.APP.Application.Users
             private readonly UserManager<User> _userManager;
             private readonly SignInManager<User> _signInManager;
             private readonly TestBackendContext _context;
-            public Handler(UserManager<User> userManager, SignInManager<User> signInManager, TestBackendContext context)
+            private readonly IJwtGenerator _jwtGenerator;
+            public Handler(UserManager<User> userManager, SignInManager<User> signInManager, TestBackendContext context, IJwtGenerator jwtGenerator)
             {
                 _userManager = userManager;
                 _signInManager = signInManager;
                 _context = context;
+                _jwtGenerator = jwtGenerator;
             }
             public async Task<UserData> Handle(ExecuteUserr request, CancellationToken cancellationToken)
             {
@@ -45,7 +48,7 @@ namespace TestBackend.APP.Application.Users
                     return new UserData
                     {
                         Email = user.Email,
-                        Token = "Este es el token"
+                        Token = _jwtGenerator.CreateToken(user),
                     };
                 }
 
