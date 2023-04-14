@@ -9,9 +9,9 @@ namespace TestBackend.MODEL.Entities
         public int imageId { get; set; }
         public int hotelId { get; set; }
         public Hotel Hotel { get; set; }
-        public string imageTittle { get; set; }
-        public string extensionI { get; set; }
-        public byte[] imageUrl { get; set; }
+        public string? imageTittle { get; set; }
+        public string? extensionI { get; set; }
+        public byte[]? imageUrl { get; set; } 
 
 
     }

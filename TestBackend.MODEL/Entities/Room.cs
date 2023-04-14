@@ -16,6 +16,9 @@ namespace TestBackend.MODEL.Entities
         public string location { get; set; }
         [ForeignKey("roomStatusId")]
         public RoomStatus RoomStatus { get; set; }
+        public int hotelId { get; set; }
+        public int roomTypeId { get; set; }
+        public int roomStatusId { get; set; }
         //public ICollection<RoomImage> RoomImages { get; set; }
     }
 }

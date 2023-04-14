@@ -20,21 +20,21 @@ namespace TestBackend.API.Controllers
 
 
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<List<Hotel>>> Get()
         {
             return await _mediator.Send(new GetHotel.HotelsList());
         }
 
         [HttpGet("{id}")]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<Hotel>> Detail(int id)
         {
             return await _mediator.Send(new GetHotelById.UniqueHotel { hotelId = id });
         }
 
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<Unit>> Create(PostHotel.ExecuteHotel data)
         {
             return await _mediator.Send(data);

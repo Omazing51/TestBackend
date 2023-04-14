@@ -10,8 +10,8 @@ namespace TestBackend.APP.Application.HotelImages
         {
             public int hotelId { get; set; }
             public string imageTittle { get; set; }
-            public string imageDescription { get; set; }
-            public byte[] imageUrl { get; set; }
+            public string extensionI { get; set; }
+            public string imageUrl { get; set; }
         }
 
         public class Handler : IRequestHandler<ExecuteHI>
@@ -27,8 +27,8 @@ namespace TestBackend.APP.Application.HotelImages
                 {
                     hotelId = request.hotelId,
                     imageTittle = request.imageTittle,
-                    imageDescription = request.imageDescription,
-                    imageUrl = request.imageUrl
+                    extensionI = request.extensionI,
+                    imageUrl = System.Convert.FromBase64String(request.imageUrl),
                 };
                 _context.HotelImages.Add(hi);
                 var value = await _context.SaveChangesAsync();
