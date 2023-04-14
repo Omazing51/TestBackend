@@ -15,4 +15,8 @@
     <ProjectReference Include="..\TestBackend.MODEL\TestBackend.MODEL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\BookingDetails\" />
+  </ItemGroup>
+
 </Project>
